@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
     </head>
 
     <body>
@@ -110,15 +110,42 @@
                 </div>
             </div>
             
-            <div id="generateBtn" class="text-center mt-4">
-                <button class="btn btn-dark btn-lg px-5">
+            <div class="text-center mt-4">
+                <button id="generateBtn" class="btn btn-dark btn-lg px-5">
                     Generate Documentation
                 </button>
             </div>
         </div>
 
+<!-- 
+        <div class="modal fade" id="documentationModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">
+                            Generated Testing Documentation
+                        </h4>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="documentationContent"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id="downloadPdfBtn"> Download PDF </button>
+                        <button class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script src="{{ url_for('static', path='/js/script.js') }}"></script>
     </body>
 </html>
